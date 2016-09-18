@@ -1,0 +1,137 @@
+/* ==========================================================================
+   SIDEBAR
+   ========================================================================== */
+.stats__container {
+  margin-bottom: 3.5rem;
+  width: 100%;
+  
+  @media (min-width: 850px) {
+    margin-bottom: 0rem;
+    max-width: 14rem;
+  }
+}
+
+h2 {
+  @include condensed-font();
+  float: left;
+  font-size: 2.4rem;
+  margin: 0 0 .8rem 0;
+  text-transform: uppercase;
+}
+
+.leg-nav {
+  float: right;
+  width: 5rem;
+  
+  @media (min-width: 850px) {
+    width: 3.5rem;
+  }
+  
+  ul {
+    display: inline-block;
+    margin: 0.1rem 0 0 0;
+    position: relative;
+    width: 100%;
+    
+    @media (min-width: 850px) {
+      margin: 0.8rem 0 0 0;
+    }
+  }
+  
+  li {
+    border: 1px solid $grey-light-xx;
+    box-sizing: border-box;
+    cursor: pointer;
+    float: left;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+    width: 50%;
+    
+    a {
+      display: block;
+      padding: .7rem;
+      
+      @media (min-width: 850px) {
+        padding: 0.3rem 0;
+      }
+    }
+    
+    polygon {
+      fill: $grey-light;
+    }
+    
+    .no-touch & {
+      &:hover  {
+        background: $grey-dark-x;
+        border-color: $grey-dark-x;
+
+        polygon {
+          fill: $white;
+        }
+      }
+    }
+    
+    &:last-child {
+      border-left: none;
+    }
+  }
+}
+
+.stats__list {
+  float: left;
+  font-size: .8rem;
+  width: 100%;
+  
+  .stats {
+    border-top: 1px solid $rule;
+    margin: 0;    
+  }
+  
+  li {
+    @include sans-serif-font();
+    color: $grey-mid;
+    border-bottom: 1px solid $rule;
+    display: block;
+    float: left;
+    font-size: .6rem;    
+    letter-spacing: .08em;
+    line-height: .8rem;
+    padding: .9rem 0;
+    text-transform: uppercase;
+    width: 50%;
+
+    @media (min-width: 850px) {
+      width: 100%;
+    }    
+  }
+  
+  .stats__label {
+    float: left;
+    line-height: 1.6rem;
+    margin-right: 0.3rem;
+  }
+  
+  .stats__value {
+    @include condensed-font();
+    color: $grey-dark;
+    font-size: 1.1rem;
+    line-height: .3rem;
+    letter-spacing: 0;
+    text-transform: lowercase;
+    
+    @media (min-width: 850px) {
+      float: right;
+    }
+  }
+}
+
+.stats-graph {
+  fill: $grey-light-xxx;
+  height: auto;
+  padding-left: 0.2rem;
+  width: .8rem;
+  
+  .selected {
+    fill: $red;
+  }
+}

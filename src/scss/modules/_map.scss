@@ -1,0 +1,85 @@
+/* ==========================================================================
+   MAP
+   ========================================================================== */
+
+text {
+  @include condensed-font();
+  fill: $grey-dark;
+  font-size: 0.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.leg__path {
+  stroke: $grey-mid;
+  stroke-width: 2;
+  transition: all 0.25s ease-in-out;
+}
+
+.marker, .circle {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.circle {
+  fill: $white;
+  stroke: red;
+  stroke-width: 2;
+  transition: all 0.2s ease-in-out;
+}
+
+.marker {
+  fill: $red;
+}
+
+.marker, .circle {
+  transform-origin: center center;
+}
+
+.selected {
+  .marker, .circle {   
+    animation-duration: 0.25s;
+    animation-name: bounceScale;
+    animation-timing-function: cubic-bezier(0.695, 0.000, 0.630, 1.105);
+    animation-fill-mode: both;
+  }
+  
+  text {
+    fill: $white;
+  }
+  
+  .leg__path {
+    stroke: red;
+    stroke-width: 3px;
+  }
+}
+
+.leg-group {
+  cursor: pointer;  
+}
+
+@keyframes bounceScale {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pathAnimation {
+  to {
+    opacity: 0.65;
+    stroke-dasharray: 3;
+    stroke-dashoffset: 3;
+  }
+}
+
+.path-animation {
+  opacity: 0;
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0;
+  animation: pathAnimation 0.75s ease-in-out forwards;
+}

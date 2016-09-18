@@ -1,0 +1,36 @@
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+@mixin sans-serif-font {
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin condensed-font {
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+@mixin serif-font {
+  font-family: georgia, serif;
+}
+
+h1 {
+  @include condensed-font();
+  border-bottom: 1px solid $rule;
+  display: inline-block;
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.018em;
+  line-height: 1.125;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+  
+  @media (min-width: 700px) {
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 1240px) {
+    margin-top: 4rem;
+  }
+}

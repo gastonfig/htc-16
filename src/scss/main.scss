@@ -1,0 +1,122 @@
+// Modules
+@import "modules/normalize";
+@import "modules/colors";
+@import "modules/typography";
+@import 'modules/sidebar';
+@import 'modules/map';
+
+/* ==========================================================================
+   MAIN STYLES
+   ========================================================================== */
+
+// LAYOUT
+.container {
+  margin: 0 auto;
+  max-width: 80em;
+  padding-left: 3.5%;
+  padding-right: 3.5%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+section {
+  display: inline-block;
+}
+
+body {
+  background: $background;
+}
+
+// HEADER
+.intro {
+  @include serif-font();
+  color: $text-color;
+  font-size: 15px;
+  line-height: 23px;
+  margin-bottom: 3.5rem;
+  margin-top: 0;
+  max-width: 31.5rem;
+  
+  @media (min-width: 850px) {
+    margin-bottom: 8rem;
+  }
+  
+  a {
+    border-bottom: 1px solid rgba($text-color, 0.2);
+    color: $text-color;
+    text-decoration: none;
+    
+    &:hover {
+      color: $red;
+      border-color: $red;
+    }
+  }
+}
+
+// MAP
+.map {
+  float: right;
+  width: 100%;  
+  
+  @media (min-width: 850px) {
+    max-width: 70%;
+  }
+  
+  svg {
+    width: 100%;
+  }
+}
+
+.location__label {
+  @include sans-serif-font(); 
+  fill: $grey-light-x;
+  font-size: 1rem;
+}
+
+// FOOTER
+footer {
+  border-top: 1px solid $rule;
+  display: inline-block;
+  margin-top: 7rem;
+  padding-top: .3rem;
+  width: 100%;
+  
+  p, a {
+    color: $grey-light;
+  }
+  
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      color: $red;
+      text-decoration: underline;
+    }
+  }
+  
+  p {
+    @include sans-serif-font();
+    font-size: .7rem;
+    text-align: center;
+  }
+}
+
+// ANIMATION
+@keyframes fadeIn {
+ 0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-duration: 0.25s;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in-out; 
+}
