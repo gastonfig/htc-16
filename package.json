@@ -1,14 +1,14 @@
 {
   "name": "htc-16",
-  "description": ".",
-  "author": ".",
+  "description": "An interactive map of the stages I ran in the Hood to Coast 2016 relay.",
+  "author": "Gaston Figueroa",
   "private": true,
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",
     "serve": "http-server -c 1 -a localhost",
     "dev": "npm-run-all --parallel watchify serve",
     "build": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > dist/build.js",
-    "buildDeploy": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > docs/dist/build.js && cp -R index.html docs/index.html",
+    "buildDeploy": "cross-env NODE_ENV=production browserify -e src/main.js | uglifyjs -c warnings=false -m > docs/dist/build.js && cp -R index.html docs/index.html && cp -R dist/images docs/",
     "lint": "eslint --ext .js,.vue src test/unit",
     "test": "karma start karma.conf.js"
   },

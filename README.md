@@ -1,6 +1,6 @@
 # htc-16
 
-> .
+An interactive map of the stages I ran in the Hood to Coast 2016 relay.
 
 ## Build Setup
 
