@@ -68,18 +68,3 @@ text {
     transform: scale(1);
   }
 }
-
-@keyframes pathAnimation {
-  to {
-    opacity: 0.65;
-    stroke-dasharray: 3;
-    stroke-dashoffset: 3;
-  }
-}
-
-.path-animation {
-  opacity: 0;
-  stroke-dasharray: 0;
-  stroke-dashoffset: 0;
-  animation: pathAnimation 0.75s ease-in-out forwards;
-}
